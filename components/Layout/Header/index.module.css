@@ -1,0 +1,17 @@
+.header {
+  padding: 30px 0;
+  background-color: var(--gray700);
+}
+
+.button {
+    background-color: var(--secondary);
+    padding: 8px 50px;
+    border-radius: 3px;
+    color: var(--gray200);
+    font-weight: bold;
+    border: none;
+    transition: all ease .1s;
+}
+.button:hover {
+    background-color: var(--primary);
+}
