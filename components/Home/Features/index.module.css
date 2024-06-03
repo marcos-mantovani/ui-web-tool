@@ -1,0 +1,22 @@
+.features {
+  padding-top: 30px;
+}
+
+.card {
+  padding: 30px;
+  margin-top: 24px;
+  background-color: var(--gray700);
+  border-radius: 3px;
+}
+
+.titleCard {
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.textCard {
+  font-size: 14px;
+  font-weight: 400;
+}
