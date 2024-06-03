@@ -1,0 +1,6 @@
+.title {
+  font-size: 20px;
+  color: var(--gray200);
+  border-bottom: 2px solid var(--secondary);
+  font-weight: bold;
+}
