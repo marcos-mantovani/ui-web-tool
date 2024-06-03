@@ -1,6 +1,7 @@
 .header {
   padding: 30px 0;
   background-color: var(--gray700);
+  margin-bottom: 50px;
 }
 
 .button {
