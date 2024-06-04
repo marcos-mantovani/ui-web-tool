@@ -1,0 +1,31 @@
+.about {
+  padding-top: 36px;
+}
+
+.boxAbout {
+  padding: 30px;
+  margin-top: 24px;
+  background-color: var(--gray700);
+  border-radius: 3px;
+}
+
+.textAbout {
+  font-size: 14px;
+  text-align: justify;
+  margin: 0;
+}
+
+.textAbout + .textAbout {
+  margin-top: 16px;
+}
+
+.dev {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.devName {
+  font-size: 16px;
+  font-weight: bold;
+}

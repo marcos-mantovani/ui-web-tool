@@ -2,6 +2,7 @@ import Layout from '/components/Layout';
 import Banner from '/components/Home/Banner';
 import Features from '/components/Home/Features';
 import Steps from '/components/Home/Steps';
+import About from '/components/Home/About';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Banner />
       <Features />
       <Steps />
+      <About />
     </Layout>
   );
 }
