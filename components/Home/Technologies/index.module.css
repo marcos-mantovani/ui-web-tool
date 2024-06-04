@@ -1,0 +1,23 @@
+.technologies {
+  padding-top: 36px;
+}
+
+.boxTechnologies {
+  padding: 30px;
+  margin-top: 24px;
+  background-color: var(--gray700);
+  border-radius: 3px;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 12px;
+}
