@@ -1,0 +1,52 @@
+.formContainer {
+  background-color: var(--gray700);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+
+.formContainer1 {
+  background-color: var(--gray700);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 0 3px 3px;
+}
+
+.formContainer6 {
+  background-color: var(--gray700);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 3px 0 3px 3px;
+}
+
+.nextButton {
+  background-color: var(--secondary);
+  color: var(--gray200);
+  border: 2px solid var(--secondary);
+  border-radius: 3px;
+  padding: 8px 50px;
+  transition: all ease 0.1s;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.nextButton:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.prevButton {
+  background-color: var(--gray400);
+  border: 2px solid var(--gray400);
+  border-radius: 3px;
+  padding: 8px 50px;
+  color: var(--gray200);
+  transition: all ease 0.1s;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.prevButton:hover {
+  background-color: var(--gray700);
+  border-color: var(--gray700);
+}

@@ -5,9 +5,9 @@
 }
 
 .button {
-    background-color: var(--secondary);
-    padding: 8px 50px;
     border-radius: 3px;
+    padding: 0;
+    background-color: var(--secondary);
     color: var(--gray200);
     font-weight: bold;
     border: none;
@@ -15,4 +15,12 @@
 }
 .button:hover {
     background-color: var(--primary);
+}
+
+.button a {
+  padding: 8px 50px;
+  border-radius: 3px;
+  color: var(--gray200);
+  display: flex;
+  text-decoration: none;
 }

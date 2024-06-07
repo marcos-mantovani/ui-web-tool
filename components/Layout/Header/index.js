@@ -10,7 +10,7 @@ export default function Header() {
       <Container>
         <Row className="justify-content-between align-items-center">
           <Col xs="auto">
-            <Link href="/">
+            <Link href="/" title="UI Web Tool">
                 <Image 
                     src="/images/logo-projeto.png"
                     width={202}
@@ -22,7 +22,9 @@ export default function Header() {
           </Col>
           <Col xs="auto">
             <button className={styles.button}>
-              Avaliar interface
+              <Link href="/form" title="Avaliar interface">
+                Avaliar interface
+              </Link>
             </button>
           </Col>
         </Row>
