@@ -52,7 +52,7 @@ body {
 .nav-tabs {
   border-bottom: none;
 }
-
+  
 .nav-tabs .nav-link {
   margin-bottom: 0;
   height: 100%;
@@ -61,13 +61,66 @@ body {
   font-weight: bold;
   border: none;
 }
-
+  
 .nav-tabs .nav-link:hover {
   background-color: var(--gray700);
 }
-
+    
 .nav-tabs .nav-link.active {
   background-color: var(--gray700);
   border: none;
   color: var(--gray200);
+}
+
+/******************** Estilo radio button ********************/
+.form-check-input {
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  transition: all ease 0.1s;
+}
+
+.form-check-input:checked {
+  background-color: var(--secondary);
+  border: 1px solid var(--secondary);
+  transition: all ease 0.1s;
+}
+
+.form-check-input:focus {
+  box-shadow: none;
+}
+
+.form-check-input:checked[type=radio] {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
+}
+
+.form-check-input.is-valid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label {
+  color: var(--gray200);
+}
+
+/*** Hover ***/
+.form-check:hover .form-check-input {
+  background-color: rgba(0,255,244,.2);
+  border: 1px solid var(--tertiary);
+}
+
+.form-check:hover .form-check-input:checked {
+  background-color: var(--tertiary);
+  border: 1px solid var(--tertiary);
+}
+
+.form-check:hover .form-check-input:checked[type=radio]{
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
+}
+
+/******************** Popover de ajuda ********************/
+.tooltip.show {
+  opacity: 100%;
+}
+.tooltip-inner {
+  background-color: #FFF;
+  color: var(--gray700);
+}
+
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #FFF !important; 
 }

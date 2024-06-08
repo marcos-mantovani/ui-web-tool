@@ -16,7 +16,8 @@ export default function Header() {
                     width={202}
                     height={56}
                     alt="UI Web Tool"
-                    title="UI Web Tool" 
+                    title="UI Web Tool"
+                    priority
                 />
             </Link>
           </Col>

@@ -1,14 +1,14 @@
 'use client'
 import { useState, useRef } from 'react';
-import {Container, Row, Col, Tabs, Tab, Form} from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab, Form } from 'react-bootstrap';
 
 import styles from "./index.module.css";
 
 import ContainerTab from '/components/Form/ContainerTab';
 
 // Funções e utilitários
-import {previousTab, nextTab} from '/functions/form';
-import {fieldsForm} from '/lib/fieldsForm';
+import { previousTab, nextTab } from '/functions/form';
+import { fieldsForm, options } from '/lib/fieldsForm';
 
 export default function FormTabs() {
     const formRef = useRef(null);
@@ -20,10 +20,13 @@ export default function FormTabs() {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+        } else {
+            const formData = new FormData(event.target),
+            formDataObj = Object.fromEntries(formData.entries());
+            console.log(formDataObj);
+            localStorage.setItem('formData', JSON.stringify(formDataObj));
+            
         }
-        const formData = new FormData(event.target),
-        formDataObj = Object.fromEntries(formData.entries())
-        console.log(formDataObj)
         setValidated(true);
     };
 
@@ -48,6 +51,7 @@ export default function FormTabs() {
                                     <ContainerTab
                                         description={data.description}
                                         fields={data.fields}
+                                        options={options}
                                     />
                                 </Container>
                             </Tab>

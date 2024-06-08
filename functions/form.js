@@ -16,6 +16,10 @@ export function previousTab(key, setKey) {
             setKey('imagens');
             break;
     }
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 export function nextTab(key, setKey, formRef) {
@@ -41,4 +45,8 @@ export function nextTab(key, setKey, formRef) {
             }
             break;
     }
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }

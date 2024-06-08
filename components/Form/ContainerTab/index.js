@@ -4,7 +4,7 @@ import {Col, Row, OverlayTrigger, Tooltip, Form} from 'react-bootstrap';
 
 import styles from "./index.module.css";
 
-export default function ContainerTab({description, fields}) {
+export default function ContainerTab({description, fields, options}) {
   const renderTooltip = (text) => (
     <Tooltip id="button-tooltip">
       {text}
@@ -42,34 +42,21 @@ export default function ContainerTab({description, fields}) {
               </Row>
               <Row className="m-0">
                 <Col xs={12} className="p-3" style={{border: '1px solid var(--gray400)', borderRadius: '3px', margin: '5px 0 15px 0'}}>
-                  <Form.Check
-                    label="Atende"
-                    name={field.name}
-                    type={'radio'}
-                    id={field.name + '__1'}
-                    required
-                  />
-                  <Form.Check
-                    label="Atende parcialmente"
-                    name={field.name}
-                    type={'radio'}
-                    id={field.name + '__2'}
-                    required
-                  />
-                  <Form.Check
-                    label="Não atende"
-                    name={field.name}
-                    type={'radio'}
-                    id={field.name + '__3'}
-                    required
-                  />
-                  <Form.Check
-                    label="Não se aplica"
-                    name={field.name}
-                    type={'radio'}
-                    id={field.name + '__4'}
-                    required
-                  />
+                  <Form.Group controlId={field.name}>
+                    {options.map((option, idx2) => {
+                      return(
+                        <Form.Check
+                          key={idx2}
+                          type='radio'
+                          label={option.label}
+                          name={field.name}
+                          id={`${field.name}_${option.name}`}
+                          required
+                          value={option.name}
+                        />
+                      );
+                    })}
+                  </Form.Group>
                 </Col>
               </Row>
             </Col>
