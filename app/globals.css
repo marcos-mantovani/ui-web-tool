@@ -48,6 +48,10 @@ body {
 	background-color: var(--gray300);
 }
 
+.pt-3 {
+  padding-top: 15px !important;
+}
+
 /******************** Tabs Formulário ********************/
 .nav-tabs {
   border-bottom: none;
@@ -73,19 +77,21 @@ body {
 }
 
 /******************** Estilo radio button ********************/
-.form-check-input {
+.form-check-input,
+.was-validated .form-check-input:valid {
   background-color: transparent;
   border: 1px solid var(--secondary);
   transition: all ease 0.1s;
 }
-
-.form-check-input:checked {
+.form-check-input:checked, 
+.was-validated .form-check-input:valid:checked {
   background-color: var(--secondary);
   border: 1px solid var(--secondary);
   transition: all ease 0.1s;
 }
 
-.form-check-input:focus {
+.form-check-input:focus,
+.was-validated .form-check-input:valid:focus {
   box-shadow: none;
 }
 
@@ -110,6 +116,10 @@ body {
 
 .form-check:hover .form-check-input:checked[type=radio]{
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
+}
+
+.form-check:hover label {
+  color: var(--gray200) !important;
 }
 
 /******************** Popover de ajuda ********************/

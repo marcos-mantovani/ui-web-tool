@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation'
 import { Container, Row, Col, Tabs, Tab, Form } from 'react-bootstrap';
 
 import styles from "./index.module.css";
@@ -11,6 +12,7 @@ import { previousTab, nextTab } from '/functions/form';
 import { fieldsForm, options } from '/lib/fieldsForm';
 
 export default function FormTabs() {
+    const router = useRouter();
     const formRef = useRef(null);
     const [key, setKey] = useState('consistencia');
     const [validated, setValidated] = useState(false);
@@ -25,7 +27,7 @@ export default function FormTabs() {
             formDataObj = Object.fromEntries(formData.entries());
             console.log(formDataObj);
             localStorage.setItem('formData', JSON.stringify(formDataObj));
-            
+            router.push('/report');
         }
         setValidated(true);
     };

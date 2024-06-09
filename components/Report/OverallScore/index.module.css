@@ -1,0 +1,15 @@
+.container {
+  margin-bottom: 50px;
+}
+
+.boxContent {
+  padding-top: 15px;
+}
+
+.container h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.container p {
+  font-size: 14px;
+}

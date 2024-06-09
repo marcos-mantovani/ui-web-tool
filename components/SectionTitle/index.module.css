@@ -3,4 +3,5 @@
   color: var(--gray200);
   border-bottom: 2px solid var(--secondary);
   font-weight: bold;
+  line-height: 1;
 }

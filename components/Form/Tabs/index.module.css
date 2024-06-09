@@ -20,13 +20,15 @@
 }
 
 .nextButton {
-  background-color: var(--secondary);
-  color: var(--gray200);
-  border: 2px solid var(--secondary);
-  border-radius: 3px;
   padding: 8px 50px;
-  transition: all ease 0.1s;
+  border-radius: 3px;
+  color: var(--gray200);
+  display: flex;
+  text-decoration: none;
+  background-color: var(--secondary);
   font-weight: bold;
+  border: none;
+  transition: all ease .1s;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
@@ -37,8 +39,8 @@
 
 .prevButton {
   background-color: var(--gray400);
-  border: 2px solid var(--gray400);
   border-radius: 3px;
+  border: none;
   padding: 8px 50px;
   color: var(--gray200);
   transition: all ease 0.1s;
