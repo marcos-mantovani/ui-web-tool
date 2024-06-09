@@ -24,3 +24,9 @@
   display: flex;
   text-decoration: none;
 }
+
+@media print {
+  .header {
+    display: none;
+  }
+}

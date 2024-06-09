@@ -134,3 +134,10 @@ body {
 .bs-tooltip-end .tooltip-arrow::before {
   border-right-color: #FFF !important; 
 }
+
+/******************** Estilos para impressão do reraltório ********************/
+@media print {
+  @page {
+    margin: 0 !important;
+  }
+}
