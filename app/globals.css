@@ -122,6 +122,15 @@ body {
   color: var(--gray200) !important;
 }
 
+.was-validated .form-check-input:invalid {
+  border-color: #E25858;
+  background-color: transparent;
+}
+
+.was-validated .form-check-input:invalid~.form-check-label {
+  color: #E25858;
+}
+
 /******************** Popover de ajuda ********************/
 .tooltip.show {
   opacity: 100%;
