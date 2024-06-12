@@ -1,6 +1,6 @@
 'use client'
 import { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { Container, Row, Col, Tabs, Tab, Form } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 

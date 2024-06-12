@@ -1,10 +1,15 @@
+'use client'
 import {Container, Col, Row} from 'react-bootstrap';
 import Image from 'next/image';
-import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import styles from "./index.module.css";
 
 export default function Header() {
+  const pathname = usePathname();
+  const router = useRouter();
+
   return (
     <Col className={styles.header} xs={12}>
       <Container>
@@ -22,10 +27,13 @@ export default function Header() {
             </Link>
           </Col>
           <Col xs="auto">
-            <button className={styles.button}>
-              <Link href="/form" title="Avaliar interface">
-                Avaliar interface
-              </Link>
+            <button 
+              type="button" 
+              onClick={() => {pathname != '/form' && router.push('/form')}} 
+              className={styles.button} 
+              disabled={pathname == '/form'}
+            >
+              Avaliar interface
             </button>
           </Col>
         </Row>

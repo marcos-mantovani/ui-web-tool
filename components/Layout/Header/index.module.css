@@ -6,23 +6,21 @@
 
 .button {
     border-radius: 3px;
-    padding: 0;
+    padding: 8px 50px;
     background-color: var(--secondary);
     color: var(--gray200);
     font-weight: bold;
     border: none;
+    cursor: pointer;
     transition: all ease .1s;
 }
 .button:hover {
     background-color: var(--primary);
 }
-
-.button a {
-  padding: 8px 50px;
-  border-radius: 3px;
-  color: var(--gray200);
-  display: flex;
-  text-decoration: none;
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  background-color: var(--secondary);
 }
 
 @media print {
