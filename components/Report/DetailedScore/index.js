@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 
 import SectionTitle from '/components/SectionTitle';
 
-export default function DetailedScore() {
+export default function DetailedScore({dataScore}) {
     const options = {
         chart: {
           type: 'bar',
@@ -61,7 +61,7 @@ export default function DetailedScore() {
             dataLabels: {
               enabled: true,
               style: {
-                color: 'var(--gray100)', // Personalização da cor dos rótulos de dados
+                color: 'var(--gray100)',
               }
             },
             borderWidth: 0,
@@ -76,8 +76,15 @@ export default function DetailedScore() {
         },
         series: [{
           name: 'Pontuação',
-          data: [85, 78, 90, 95, 70, 80], // Exemplos de pontuações para cada critério
-          color: 'var(--secondary)', // Cor das barras,
+          data: [
+            dataScore.detailedScore.consistencia.score, 
+            dataScore.detailedScore.hierarquiaVisual.score, 
+            dataScore.detailedScore.usablidade.score, 
+            dataScore.detailedScore.designVisual.score, 
+            dataScore.detailedScore.imagens.score, 
+            dataScore.detailedScore.mobile.score
+          ],
+          color: 'var(--secondary)',
         }],
 
     legend: {
@@ -103,7 +110,7 @@ export default function DetailedScore() {
                             Consistência
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                            {dataScore.detailedScore.consistencia.description} 
                         </p>
                     </div>
                     <div className={styles.detailedDescription}>
@@ -111,8 +118,7 @@ export default function DetailedScore() {
                             Hierarqui visual
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
+                          {dataScore.detailedScore.hierarquiaVisual.description}
                         </p>
                     </div>
                     <div className={styles.detailedDescription}>
@@ -120,7 +126,7 @@ export default function DetailedScore() {
                             Usabilidade
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy 
+                          {dataScore.detailedScore.usablidade.description} 
                         </p>
                     </div>
                     <div className={styles.detailedDescription}>
@@ -128,7 +134,7 @@ export default function DetailedScore() {
                             Design visual
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                          {dataScore.detailedScore.designVisual.description}
                         </p>
                     </div>
                     <div className={styles.detailedDescription}>
@@ -136,8 +142,7 @@ export default function DetailedScore() {
                             Imagens
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                          {dataScore.detailedScore.imagens.description}
                         </p>
                     </div>
                     <div className={styles.detailedDescription}>
@@ -145,7 +150,7 @@ export default function DetailedScore() {
                             Mobile
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy texten
+                          {dataScore.detailedScore.mobile.description}
                         </p>
                     </div>
                 </Col>
