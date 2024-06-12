@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation'
 import { Container, Row, Col, Tabs, Tab, Form } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 import styles from "./index.module.css";
 
@@ -22,10 +23,11 @@ export default function FormTabs() {
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+            toast.error("Verifique os campos e tente novamente!");
         } else {
+            toast.success("Avaliação concluída!");
             const formData = new FormData(event.target),
             formDataObj = Object.fromEntries(formData.entries());
-            console.log(formDataObj);
             localStorage.setItem('formData', JSON.stringify(formDataObj));
             router.push('/report');
         }
@@ -78,7 +80,7 @@ export default function FormTabs() {
                         </button>
                     </Col>
                 </Row>
-            </Form>    
+            </Form>   
         </Container>
     );
 }
