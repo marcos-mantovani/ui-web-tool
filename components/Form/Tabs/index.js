@@ -17,17 +17,38 @@ export default function FormTabs() {
     const formRef = useRef(null);
     const [key, setKey] = useState('consistencia');
     const [validated, setValidated] = useState(false);
+    const [tabValidation, setTabValidation] = useState({
+        consistencia: true,
+        hierarquia_visual: true,
+        usabilidade: true,
+        design_visual: true,
+        imagens: true,
+        mobile: true,
+      });
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
+        const formData = new FormData(event.target),
+        formDataObj = Object.fromEntries(formData.entries());
+        console.log(formDataObj);
+
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+
+            let tempValidation = [];
+            fieldsForm.forEach((element) => {
+                tempValidation[element.tab] = element.fields.every(function(field) {
+                    if (!(field.name in formDataObj)) return false
+                    else return true
+                  })
+            });
+
+            setTabValidation(tempValidation);
+
             toast.error("Verifique os campos e tente novamente!");
         } else {
             toast.success("Avaliação concluída!");
-            const formData = new FormData(event.target),
-            formDataObj = Object.fromEntries(formData.entries());
             localStorage.setItem('formData', JSON.stringify(formDataObj));
             router.push('/report');
         }
@@ -45,7 +66,7 @@ export default function FormTabs() {
                 >
                     {fieldsForm.map((data, idx) => {
                         return(
-                            <Tab key={idx} eventKey={data.tab} title={data.titleTab}>
+                            <Tab key={idx} eventKey={data.tab} title={tabValidation[data.tab] ? data.titleTab : '⚠️  ' + data.titleTab}>
                                 <Container 
                                     className={
                                         data.tab == 'consistencia' ? styles.formContainer1 : 
@@ -80,7 +101,7 @@ export default function FormTabs() {
                         </button>
                     </Col>
                 </Row>
-            </Form>   
+            </Form>  
         </Container>
     );
 }

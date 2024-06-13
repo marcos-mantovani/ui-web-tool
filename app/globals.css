@@ -119,7 +119,7 @@ body {
 }
 
 .form-check:hover label {
-  color: var(--gray200) !important;
+  color: var(--gray200);
 }
 
 .was-validated .form-check-input:invalid {
