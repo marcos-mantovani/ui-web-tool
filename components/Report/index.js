@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import OverallScore from './OverallScore';
 import DetailedScore from './DetailedScore';
 
-import { calculateScore } from '/lib/report';
+import { calculateScore } from '/functions/report';
 
 import styles from "./index.module.css";
 

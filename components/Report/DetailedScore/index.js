@@ -9,6 +9,9 @@ import SectionTitle from '/components/SectionTitle';
 
 export default function DetailedScore({dataScore}) {
     const options = {
+        accessibility: {
+          enabled: false,
+        },
         chart: {
           type: 'bar',
           backgroundColor: 'var(--gray400)',

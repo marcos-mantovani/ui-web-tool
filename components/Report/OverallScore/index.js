@@ -14,6 +14,9 @@ import SectionTitle from '/components/SectionTitle';
 
 export default function OverallScore({dataScore}) {
     const options = {
+        accessibility: {
+          enabled: false,
+        },
         chart: {
             type: 'solidgauge',
             backgroundColor: 'var(--gray400)',
