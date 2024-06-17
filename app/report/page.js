@@ -1,10 +1,10 @@
 import Layout from '/components/Layout';
-import Report from '/components/Report';
+import Result from '/components/Report';
 
-export default function Form() {
+export default function Report() {
   return (
     <Layout>
-      <Report />
+      <Result />
     </Layout>
   );
 }

@@ -83,7 +83,6 @@ export function calculateScore(data) {
         if (data[val] != 'nao_aplica') {
             score.maximo += scoreQuestions[val] * scoreAnswers.atende;
             score.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
-            console.log(scoreQuestions[val]);
 
             if (val.startsWith("A__")) {
                 score.consistencia.maximo += scoreQuestions[val] * scoreAnswers.atende;
@@ -106,8 +105,6 @@ export function calculateScore(data) {
             }
         }
     });
-
-    console.log('score', score);
     
     return {
         score: Math.round((score.real / score.maximo) * 1000),

@@ -30,7 +30,6 @@ export default function FormTabs() {
         const form = event.currentTarget;
         const formData = new FormData(event.target),
         formDataObj = Object.fromEntries(formData.entries());
-        console.log(formDataObj);
 
         if (form.checkValidity() === false) {
             event.preventDefault();

@@ -1,18 +1,35 @@
 'use client'
+import { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import Highcharts, { color } from 'highcharts';
+// import dynamic from 'next/dynamic';
+import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsMore from 'highcharts/highcharts-more';
 import SolidGauge from 'highcharts/modules/solid-gauge';
 
-HighchartsMore(Highcharts);
-SolidGauge(Highcharts);
+// const HighchartsMore = dynamic(() => import('highcharts/highcharts-more'), { ssr: false });
+// const SolidGauge = dynamic(() => import('highcharts/modules/solid-gauge'), { ssr: false });
 
 import styles from "./index.module.css";
 
 import SectionTitle from '/components/SectionTitle';
 
 export default function OverallScore({dataScore}) {
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
+        if (typeof HighchartsMore === 'function') {
+            HighchartsMore(Highcharts);
+            setLoading(false);
+        }
+        if (typeof SolidGauge === 'function') {
+            SolidGauge(Highcharts);
+            setLoading(false);
+        }
+        // HighchartsMore(Highcharts);
+        // SolidGauge(Highcharts);
+    },[dataScore]);
+
     const options = {
         accessibility: {
           enabled: false,
@@ -90,22 +107,24 @@ export default function OverallScore({dataScore}) {
     return (
         <Col xs={12} className={styles.container}>
             <SectionTitle title="Score total da interface" />
-            <Row className={styles.boxContent}>
-                <Col xs={12} lg={6}>
-                    <HighchartsReact
-                        highcharts={Highcharts}
-                        options={options}
-                    />
-                </Col>
-                <Col xs={12} lg={6} className='pt-3 pt-lg-0'>
-                    <h2>
-                        Score: {dataScore.score}
-                    </h2>
-                    <p>
-                        {dataScore.descriptionOverallScore}
-                    </p>
-                </Col>
-            </Row>
+            {!loading && (
+                <Row className={styles.boxContent}>
+                    <Col xs={12} lg={6}>
+                        <HighchartsReact
+                            highcharts={Highcharts}
+                            options={options}
+                        />
+                    </Col>
+                    <Col xs={12} lg={6} className='pt-3 pt-lg-0'>
+                        <h2>
+                            Score: {dataScore.score}
+                        </h2>
+                        <p>
+                            {dataScore.descriptionOverallScore}
+                        </p>
+                    </Col>
+                </Row>
+            )}
         </Col>
     );
 }

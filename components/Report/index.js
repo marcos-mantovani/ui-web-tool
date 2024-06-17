@@ -14,7 +14,10 @@ export default function Report() {
     
     useEffect(()=> {
         const formData = JSON.parse(localStorage.getItem('formData'));
-        setDataScore(calculateScore(formData));
+
+        if(formData) {
+            setDataScore(calculateScore(formData));
+        }
     },[])
     
     const handlePrint = () => {
