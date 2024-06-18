@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
 
 import OverallScore from './OverallScore';
 import DetailedScore from './DetailedScore';
@@ -11,12 +12,15 @@ import styles from "./index.module.css";
 
 export default function Report() {
     const [dataScore, setDataScore] = useState(null);
+    const router = useRouter();
     
     useEffect(()=> {
         const formData = JSON.parse(localStorage.getItem('formData'));
 
         if(formData) {
             setDataScore(calculateScore(formData));
+        } else {
+            router.push('/form');
         }
     },[])
     

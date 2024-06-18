@@ -71,7 +71,7 @@ export default function OverallScore({dataScore}) {
                 [0.9, '#00FFF4'], // green
             ],
             min: 0,
-            max: 1000,
+            max: 100,
             lineWidth: 0,
             tickWidth: 0,
             tickPositions: [],

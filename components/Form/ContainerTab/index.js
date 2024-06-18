@@ -21,23 +21,24 @@ export default function ContainerTab({description, fields, options}) {
             <Col key={idx} xs={12}>
               <Row>
                 <Col xs="auto" className={styles.title}>
-                  {field.label}
-                </Col>
-                <Col className="p-0" xs="auto">
-                  <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 100, hide: 400 }}
-                    overlay={renderTooltip(field.help)}
-                  >
-                    <Image 
-                      src="/icons/help.svg"
-                      height={16}
-                      width={16}
-                      alt="Ajuda"
-                      style={{cursor: 'pointer'}}
-                    /> 
-                  </OverlayTrigger>
-                  
+                  <span style={{paddingRight: '15px'}}>
+                    {field.label}
+                  </span>
+                  {field?.help && (
+                    <OverlayTrigger
+                      placement="right"
+                      delay={{ show: 100, hide: 400 }}
+                      overlay={renderTooltip(field.help)}
+                    >
+                      <Image 
+                        src="/icons/help.svg"
+                        height={16}
+                        width={16}
+                        alt="Ajuda"
+                        style={{cursor: 'pointer'}}
+                      /> 
+                    </OverlayTrigger>
+                  )}
                 </Col>
               </Row>
               <Row className="m-0">

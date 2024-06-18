@@ -107,31 +107,31 @@ export function calculateScore(data) {
     });
     
     return {
-        score: Math.round((score.real / score.maximo) * 1000),
+        score: Math.round((score.real / score.maximo) * 100),
         descriptionOverallScore: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         detailedScore: {
             consistencia: {
-                score: Math.round((score.consistencia.real / score.maximo) * 1000),
+                score: Math.round((score.consistencia.real / score.consistencia.maximo) * 100),
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer"
             },
             hierarquiaVisual: {
-                score: Math.round((score.hierarquiaVisual.real / score.maximo) * 1000),
+                score: Math.round((score.hierarquiaVisual.real / score.hierarquiaVisual.maximo) * 100),
                 description: 'Lorem Ipsum is simply dummy'
             },
             usablidade: {
-                score: Math.round((score.usablidade.real / score.maximo) * 1000),
+                score: Math.round((score.usablidade.real / score.usablidade.maximo) * 100),
                 description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the',
             },
             designVisual: {
-                score: Math.round((score.designVisual.real / score.maximo) * 1000),
+                score: Math.round((score.designVisual.real / score.designVisual.maximo) * 100),
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when"
             },
             imagens: {
-                score: Math.round((score.imagens.real / score.maximo) * 1000),
+                score: Math.round((score.imagens.real / score.imagens.maximo) * 100),
                 description: 'Lorem Ipsum is simply dummy texten'
             },
             mobile: {
-                score: Math.round((score.mobile.real / score.maximo) * 1000),
+                score: Math.round((score.mobile.real / score.mobile.maximo) * 100),
                 description: 'Lorem Ipsum is simply dummy'
             },
         }

@@ -7,7 +7,7 @@ export default function Banner() {
     <Container className="position-relative">
         <img 
           className={`${styles.banner} img-fluid`} 
-          src="/images/banner-home.png"
+          src="/images/banner-home.webp"
           title="UI Web Tool" 
           alt="UI Web Tool" 
         />

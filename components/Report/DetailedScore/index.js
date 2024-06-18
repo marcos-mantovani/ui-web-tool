@@ -41,6 +41,7 @@ export default function DetailedScore({dataScore}) {
         },
         yAxis: {
           min: 0,
+          max: 100,
           title: {
             text: 'Pontuação',
             align: 'high',

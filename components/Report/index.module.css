@@ -24,6 +24,10 @@
   transition: all ease .1s;
 }
 
+.button:hover {
+  background-color: var(--primary);
+}
+
 @media print {
   .button {
     display: none;
