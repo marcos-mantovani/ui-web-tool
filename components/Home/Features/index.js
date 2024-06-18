@@ -10,7 +10,7 @@ export default function Features() {
     <Container className={styles.features}>
       <SectionTitle title="Avalie e Melhore a UI da sua Interface com Facilidade" />
       <Row className="justify-content-center">
-        <Col xs={4}>
+        <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
             <div className="text-center">
               <Image 
@@ -29,7 +29,7 @@ export default function Features() {
             </div>
           </div>
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
             <div className="text-center">
               <Image 
@@ -48,7 +48,7 @@ export default function Features() {
             </div>
           </div>
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
             <div className="text-center">
               <Image 
@@ -67,7 +67,7 @@ export default function Features() {
             </div>
           </div>
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
             <div className="text-center">
               <Image 
@@ -86,7 +86,7 @@ export default function Features() {
             </div>
           </div>
         </Col>
-        <Col xs={4}>
+        <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
             <div className="text-center">
               <Image 
