@@ -23,6 +23,16 @@ export default function Header() {
                     alt="UI Web Tool"
                     title="UI Web Tool"
                     priority
+                    className="d-none d-sm-block"
+                />
+                <Image 
+                    src="/images/logo-mobile.png"
+                    width={56}
+                    height={56}
+                    alt="UI Web Tool"
+                    title="UI Web Tool"
+                    priority
+                    className="d-sm-none"
                 />
             </Link>
           </Col>

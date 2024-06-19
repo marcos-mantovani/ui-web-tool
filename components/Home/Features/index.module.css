@@ -3,8 +3,8 @@
 }
 
 .card {
-  padding: 30px;
-  margin-top: 24px;
+  padding: 15px;
+  margin-top: 15px;
   background-color: var(--gray700);
   border-radius: 3px;
 }
@@ -19,4 +19,18 @@
 .textCard {
   font-size: 14px;
   font-weight: 400;
+}
+
+@media (min-width: 576px) {
+  .card {
+    padding: 15px;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 30px;
+    margin-top: 24px;
+  }
 }

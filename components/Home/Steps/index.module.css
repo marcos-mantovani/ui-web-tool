@@ -3,8 +3,8 @@
 }
 
 .boxSteps {
-  padding: 30px;
-  margin-top: 24px;
+  padding: 15px;
+  margin-top: 15px;
   border: 1px solid var(--gray400);
   border-radius: 3px;
 }
@@ -21,4 +21,11 @@
   font-size: 14px;
   margin-left: 18px;
   margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
+  .boxSteps {
+    padding: 30px;
+    margin-top: 24px;
+  }
 }

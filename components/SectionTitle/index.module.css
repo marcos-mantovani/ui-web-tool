@@ -1,7 +1,13 @@
 .title {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--gray200);
   border-bottom: 2px solid var(--secondary);
   font-weight: bold;
   line-height: 1;
+}
+
+@media (min-width: 576px) {
+  .title {
+    font-size: 20px;
+  }
 }
