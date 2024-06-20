@@ -1,29 +1,30 @@
 .formContainer {
   background-color: var(--gray700);
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 3px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 0 0 3px 3px;
 }
 
 .formContainer1 {
   background-color: var(--gray700);
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 0 3px 3px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 0 0 3px 3px;
 }
 
 .formContainer6 {
   background-color: var(--gray700);
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 3px 0 3px 3px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 0 0 3px 3px;
 }
 
 .nextButton {
-  padding: 8px 50px;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 8px 25px;
   border-radius: 3px;
   color: var(--gray200);
-  display: flex;
   text-decoration: none;
   background-color: var(--secondary);
   font-weight: bold;
@@ -32,23 +33,49 @@
   box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-.nextButton:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-}
-
 .prevButton {
+  margin-top: 15px;
+  font-size: 14px;
   background-color: var(--gray400);
   border-radius: 3px;
   border: none;
-  padding: 8px 50px;
+  padding: 8px 25px;
   color: var(--gray200);
   transition: all ease 0.1s;
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-.prevButton:hover {
-  background-color: var(--gray700);
-  border-color: var(--gray700);
+@media (min-width: 576px) {
+  .formContainer {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+  }
+  
+  .formContainer1 {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 0 3px 3px;
+  }
+  
+  .formContainer6 {
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 3px 0 3px 3px;
+  }
+
+  .nextButton, .prevButton {
+    padding: 8px 50px;
+  }
+
+  .nextButton:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .prevButton:hover {
+    background-color: var(--gray700);
+    border-color: var(--gray700);
+  }
 }

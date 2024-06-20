@@ -9,8 +9,8 @@ export default function Footer() {
     <Col className={styles.footer} xs={12}>
       <Container>
         <Row className="justify-content-between">
-          <Col xs="auto">
-            <Row>
+          <Col xs={12} sm="auto">
+            <Row className='justify-content-center'>
               <Col xs="auto">
                 Entre em contato
               </Col>
@@ -38,8 +38,12 @@ export default function Footer() {
               </Col>
             </Row>
           </Col>
-          <Col xs="auto">
-              © 2024 UI Web Tool
+          <Col xs={12} sm="auto">
+              <Row className='justify-content-center pt-2 pt-sm-0'>
+                <Col xs="auto">
+                  © 2024 UI Web Tool
+                </Col>
+              </Row>
           </Col>
         </Row>
       </Container>

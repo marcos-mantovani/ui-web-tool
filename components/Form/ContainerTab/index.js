@@ -18,7 +18,7 @@ export default function ContainerTab({description, fields, options}) {
         </p>
         {fields.map((field, idx) => {
           return(
-            <Col key={idx} xs={12}>
+            <Col key={idx} xs={12} className="p-0">
               <Row>
                 <Col xs="auto" className={styles.title}>
                   <span style={{paddingRight: '15px'}}>
@@ -42,7 +42,7 @@ export default function ContainerTab({description, fields, options}) {
                 </Col>
               </Row>
               <Row className="m-0">
-                <Col xs={12} className="p-3" style={{border: '1px solid var(--gray400)', borderRadius: '3px', margin: '5px 0 15px 0'}}>
+                <Col xs={12} className="p-2 p-sm-3" style={{border: '1px solid var(--gray400)', borderRadius: '3px', margin: '5px 0 0 0'}}>
                   <Form.Group controlId={field.name}>
                     {options.map((option, idx2) => {
                       return(

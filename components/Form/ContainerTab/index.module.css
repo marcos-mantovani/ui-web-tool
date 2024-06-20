@@ -1,10 +1,11 @@
 .containerStyle {
   margin: 0;
 }
+
 .containerStyle p {
   font-size: 14px;
   margin: 0;
-  padding-bottom: 30px;
+  padding: 0 0 15px;
 }
 
 .containerStyle label {
@@ -12,6 +13,18 @@
 }
 
 .title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
+  margin-top: 15px;
+}
+
+@media (min-width: 576px) {
+  .containerStyle p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 16px;
+  }
 }

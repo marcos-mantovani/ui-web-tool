@@ -64,6 +64,7 @@ body {
   color: var(--gray300);
   font-weight: bold;
   border: none;
+  font-size: 14px;
 }
   
 .nav-tabs .nav-link:hover {
@@ -142,6 +143,14 @@ body {
 
 .bs-tooltip-end .tooltip-arrow::before {
   border-right-color: #FFF !important; 
+}
+
+
+
+@media (min-width: 576px) {
+  .nav-tabs .nav-link {
+    font-size: 16px;
+  }
 }
 
 /******************** Estilos para impressão do reraltório ********************/
