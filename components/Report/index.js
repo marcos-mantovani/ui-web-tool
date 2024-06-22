@@ -12,6 +12,7 @@ import styles from "./index.module.css";
 
 export default function Report() {
     const [dataScore, setDataScore] = useState(null);
+    const [width, setWidth] = useState(null);
     const router = useRouter();
     
     useEffect(()=> {
@@ -22,6 +23,11 @@ export default function Report() {
         } else {
             router.push('/form');
         }
+
+        if (typeof window !== 'undefined') {
+            setWidth(window?.innerWidth);
+        }
+
     },[])
     
     const handlePrint = () => {
@@ -42,7 +48,7 @@ export default function Report() {
                 )}
             </Row>
             <button className={`${styles.button} print-button`} type="button" onClick={handlePrint}>
-                {window?.innerWidth > 992 ? 'Imprimir relatório' : 'Baixar relatório'}
+                {width && width > 992 ? 'Imprimir relatório' : 'Baixar relatório'}
             </button>
         </Container>
     );

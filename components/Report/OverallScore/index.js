@@ -13,6 +13,7 @@ import SectionTitle from '/components/SectionTitle';
 
 export default function OverallScore({dataScore}) {
     const [loading, setLoading] = useState(true);
+    const [width, setWidth] = useState(null);
     
     useEffect(() => {
         if (typeof HighchartsMore === 'function') {
@@ -22,6 +23,10 @@ export default function OverallScore({dataScore}) {
         if (typeof SolidGauge === 'function') {
             SolidGauge(Highcharts);
             setLoading(false);
+        }
+
+        if (typeof window !== 'undefined') {
+            setWidth(window?.innerWidth);
         }
     },[dataScore]);
 
@@ -47,7 +52,7 @@ export default function OverallScore({dataScore}) {
         },
         pane: {
             center: ['50%', '85%'],
-            size: window?.innerWidth > 1200 ? '140%' : '100%',
+            size: width > 1200 ? '140%' : '100%',
             startAngle: -90,
             endAngle: 90,
             background: {
