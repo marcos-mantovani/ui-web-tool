@@ -108,7 +108,7 @@ export default function DetailedScore({dataScore}) {
                         options={options}
                     />
                 </Col>
-                <Col xs={12} lg={6} className='pt-3 pt-lg-0'>
+                <Col xs={12} lg={6} className='pt-5 pt-lg-0'>
                     <div className={styles.detailedDescription}>
                         <h3>
                             Consistência

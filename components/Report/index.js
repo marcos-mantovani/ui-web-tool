@@ -42,7 +42,7 @@ export default function Report() {
                 )}
             </Row>
             <button className={`${styles.button} print-button`} type="button" onClick={handlePrint}>
-                Imprimir relatório
+                {window?.innerWidth > 992 ? 'Imprimir relatório' : 'Baixar relatório'}
             </button>
         </Container>
     );

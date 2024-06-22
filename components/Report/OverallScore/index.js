@@ -1,14 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-// import dynamic from 'next/dynamic';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsMore from 'highcharts/highcharts-more';
 import SolidGauge from 'highcharts/modules/solid-gauge';
 
-// const HighchartsMore = dynamic(() => import('highcharts/highcharts-more'), { ssr: false });
-// const SolidGauge = dynamic(() => import('highcharts/modules/solid-gauge'), { ssr: false });
 
 import styles from "./index.module.css";
 
@@ -26,8 +23,6 @@ export default function OverallScore({dataScore}) {
             SolidGauge(Highcharts);
             setLoading(false);
         }
-        // HighchartsMore(Highcharts);
-        // SolidGauge(Highcharts);
     },[dataScore]);
 
     const options = {
@@ -52,7 +47,7 @@ export default function OverallScore({dataScore}) {
         },
         pane: {
             center: ['50%', '85%'],
-            size: '140%',
+            size: window?.innerWidth > 1200 ? '140%' : '100%',
             startAngle: -90,
             endAngle: 90,
             background: {

@@ -1,5 +1,5 @@
 .container {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .boxContent {
@@ -7,9 +7,19 @@
 }
 
 .container h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 .container p {
   font-size: 14px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    margin-bottom: 50px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
 }
