@@ -105,22 +105,24 @@ body {
 }
 
 /*** Hover ***/
-.form-check:hover .form-check-input {
+.form-check-input:hover {
   background-color: rgba(0,255,244,.2);
   border: 1px solid var(--tertiary);
+  cursor: pointer;
 }
 
-.form-check:hover .form-check-input:checked {
+.form-check-input:checked:hover {
   background-color: var(--tertiary);
   border: 1px solid var(--tertiary);
 }
 
-.form-check:hover .form-check-input:checked[type=radio]{
+.form-check-input:checked:hover[type=radio]{
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
 }
 
 .form-check:hover label {
   color: var(--gray200);
+  cursor: pointer;
 }
 
 .was-validated .form-check-input:invalid {
