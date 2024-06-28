@@ -147,6 +147,18 @@ body {
   border-right-color: #FFF !important; 
 }
 
+.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #FFF !important; 
+}
+
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #FFF !important; 
+}
+
+.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #FFF !important; 
+}
+
 
 
 @media (min-width: 576px) {
@@ -156,8 +168,16 @@ body {
 }
 
 /******************** Estilos para impressão do reraltório ********************/
-@media print {
-  @page {
-    margin: 0 !important;
-  }
+.pdf-styles {
+  background-color: white !important;
+  color: #1A1A1A !important;
+}
+
+.pdf-styles * {
+  background-color: white !important;
+  color: #1A1A1A !important;
+}
+
+.pdf-styles h1 {
+  display: none;
 }

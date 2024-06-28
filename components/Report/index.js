@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
+import { Margin, usePDF } from "react-to-pdf";
+import ReactLoading from 'react-loading';
 
 import OverallScore from './OverallScore';
 import DetailedScore from './DetailedScore';
@@ -12,8 +14,13 @@ import styles from "./index.module.css";
 
 export default function Report() {
     const [dataScore, setDataScore] = useState(null);
-    const [width, setWidth] = useState(null);
+    const [downloadPdf, setDownloadPdf] = useState(false);
     const router = useRouter();
+    const { toPDF, targetRef } = usePDF({
+        method: "save",
+        filename: "relatorio_interface.pdf",
+        page: { margin: Margin.MEDIUM },
+    });
     
     useEffect(()=> {
         const formData = JSON.parse(localStorage.getItem('formData'));
@@ -24,31 +31,39 @@ export default function Report() {
             router.push('/form');
         }
 
-        if (typeof window !== 'undefined') {
-            setWidth(window?.innerWidth);
-        }
+    },[]);
 
-    },[])
-    
-    const handlePrint = () => {
-        window.print();
+    const handleGeneratePDF = () => {
+        const pdfContent = targetRef.current;
+        pdfContent.classList.add('pdf-styles');
+        setDownloadPdf(true);
+
+        setTimeout(() => {
+            toPDF().then(() => {
+                pdfContent.classList.remove('pdf-styles');
+                setDownloadPdf(false);
+            });
+          }, "500");
+        
     };
 
     return (
         <Container>
-            <Row className="m-0">
+            <Row className={`${styles['box-pdf']} m-0`}>
+                {console.log('data', dataScore)}
                 {dataScore && (
-                    <Col className={styles.container} xs={12}>
+                    <Col className={styles.container} xs={12} ref={targetRef}>
                         <h1>
                             Avaliação concluída!
                         </h1>
-                        <OverallScore dataScore={dataScore} />
-                        <DetailedScore dataScore={dataScore} />
+                        <OverallScore dataScore={dataScore} downloadPdf={downloadPdf} />
+                        <DetailedScore dataScore={dataScore} downloadPdf={downloadPdf} />
                     </Col>
                 )}
+                <div className={`${styles['block-loading']} ${downloadPdf ? 'd-block' : 'd-none'}`} />
             </Row>
-            <button className={`${styles.button} print-button`} type="button" onClick={handlePrint}>
-                {width && width > 992 ? 'Imprimir relatório' : 'Baixar relatório'}
+            <button className={`${styles.button} print-button`} type="button" onClick={handleGeneratePDF}>
+                {downloadPdf ? (<ReactLoading type="spin" color='white' height={'20px'} width={'20px'} />) : ('Baixar relatório')}
             </button>
         </Container>
     );

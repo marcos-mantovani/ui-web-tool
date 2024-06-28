@@ -26,7 +26,7 @@ export default function ContainerTab({description, fields, options}) {
                   </span>
                   {field?.help && (
                     <OverlayTrigger
-                      placement="right"
+                      placement="auto"
                       delay={{ show: 100, hide: 400 }}
                       overlay={renderTooltip(field.help)}
                     >
