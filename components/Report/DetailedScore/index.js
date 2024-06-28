@@ -210,7 +210,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                           </h3>
                           {dataScore.detailedScore.consistencia.questions.map((val) => {
                               return (
-                                <p>- {val.name}</p>
+                                <p key={val.key}>- {val.name}</p>
                               );
                           })}
                       </div>
@@ -222,7 +222,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                           </h3>
                           {dataScore.detailedScore.hierarquiaVisual.questions.map((val) => {
                               return (
-                                <p>- {val.name}</p>
+                                <p key={val.key}>- {val.name}</p>
                               );
                           })}
                       </div>
@@ -234,7 +234,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                           </h3>
                           {dataScore.detailedScore.usablidade.questions.map((val) => {
                               return (
-                                <p>- {val.name}</p>
+                                <p key={val.key}>- {val.name}</p>
                               );
                           })}
                       </div>
@@ -246,7 +246,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                           </h3>
                           {dataScore.detailedScore.designVisual.questions.map((val) => {
                               return (
-                                <p>- {val.name}</p>
+                                <p key={val.key}>- {val.name}</p>
                               );
                           })}
                       </div>
@@ -258,7 +258,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                           </h3>
                           {dataScore.detailedScore.imagens.questions.map((val) => {
                               return (
-                                <p>- {val.name}</p>
+                                <p key={val.key}>- {val.name}</p>
                               );
                           })}
                       </div>
@@ -270,7 +270,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
                         </h3>
                         {dataScore.detailedScore.mobile.questions.map((val) => {
                             return (
-                              <p>- {val.name}</p>
+                              <p key={val.key}>- {val.name}</p>
                             );
                         })}
                     </div>
