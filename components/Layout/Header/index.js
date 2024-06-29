@@ -11,7 +11,7 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <Col className={styles.header} xs={12}>
+    <Col className={`${styles.header} ${pathname == '/' ? styles['home-page'] : ''}`} xs={12}>
       <Container>
         <Row className="justify-content-between align-items-center">
           <Col xs="auto">

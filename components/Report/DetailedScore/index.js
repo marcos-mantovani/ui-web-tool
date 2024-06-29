@@ -67,6 +67,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
               enabled: true,
               style: {
                 color: 'var(--gray100)',
+                textOutline: 'none'
               }
             },
             borderWidth: 0,

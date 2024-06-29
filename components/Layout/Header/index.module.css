@@ -4,6 +4,13 @@
   margin-bottom: 36px;
 }
 
+.home-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
 .button {
     border-radius: 3px;
     padding: 8px 20px;

@@ -19,7 +19,7 @@ export default function Report() {
     const { toPDF, targetRef } = usePDF({
         method: "save",
         filename: "relatorio_interface.pdf",
-        page: { margin: Margin.MEDIUM },
+        page: {margin: Margin.SMALL},
     });
     
     useEffect(()=> {
@@ -44,13 +44,11 @@ export default function Report() {
                 setDownloadPdf(false);
             });
           }, "500");
-        
     };
 
     return (
         <Container>
             <Row className={`${styles['box-pdf']} m-0`}>
-                {console.log('data', dataScore)}
                 {dataScore && (
                     <Col className={styles.container} xs={12} ref={targetRef}>
                         <h1>

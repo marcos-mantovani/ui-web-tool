@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 export default function Banner() {
   return (
-    <Container className="position-relative">
+    <Container className={`${styles['container-banner']} position-relative`}>
         <img 
           className={`${styles.banner} img-fluid d-none d-sm-block`} 
           src="/images/banner-home.webp"

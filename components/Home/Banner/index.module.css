@@ -1,3 +1,13 @@
+.container-banner {
+  margin-top: 105px;
+}
+
 .banner {
   border-radius: 3px;
+}
+
+@media (min-width: 576px) {
+  .container-banner {
+    margin-top: 166px;
+  }
 }
