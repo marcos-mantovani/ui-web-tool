@@ -172,7 +172,7 @@ export default function OverallScore({dataScore, downloadPdf}) {
 
     return (
         <Col xs={12} className={styles.container}>
-            <SectionTitle title="Score total da interface" />
+            <SectionTitle title="Pontuação total da interface" />
             {!loading && (
                 <Row className={styles.boxContent}>
                     <Col xs={12} lg={6} className="mb-3 mb-lg-0">
@@ -183,7 +183,7 @@ export default function OverallScore({dataScore, downloadPdf}) {
                     </Col>
                     <Col xs={12} lg={6}>
                         <h2>
-                            Score: {dataScore.score}
+                            Pontuação: {dataScore.score}
                         </h2>
                         <p>
                             {dataScore.descriptionOverallScore}

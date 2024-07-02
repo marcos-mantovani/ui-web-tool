@@ -192,7 +192,7 @@ export default function DetailedScore({dataScore, downloadPdf}) {
 
     return (
         <Col xs={12} className={styles.container}>
-            <SectionTitle title="Score por segmento" />
+            <SectionTitle title="Pontuação por segmento" />
             <Row className={styles.boxContent}>
                 <Col xs={12} lg={6}>
                     <HighchartsReact
