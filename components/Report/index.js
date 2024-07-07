@@ -47,7 +47,10 @@ export default function Report() {
     };
 
     return (
-        <Container>
+        <Container style={{position: 'relative'}}>
+            <button className={`${styles.button} print-button`} type="button" onClick={handleGeneratePDF} style={{position: 'absolute', top: '30px', left: '45px', zIndex: '2', margin: '0'}}>
+                {downloadPdf ? (<ReactLoading type="spin" color='white' height={'20px'} width={'20px'} />) : ('Baixar relatório')}
+            </button>
             <Row className={`${styles['box-pdf']} m-0`}>
                 {dataScore && (
                     <Col className={styles.container} xs={12} ref={targetRef}>
@@ -60,9 +63,13 @@ export default function Report() {
                 )}
                 <div className={`${styles['block-loading']} ${downloadPdf ? 'd-block' : 'd-none'}`} />
             </Row>
-            <button className={`${styles.button} print-button`} type="button" onClick={handleGeneratePDF}>
-                {downloadPdf ? (<ReactLoading type="spin" color='white' height={'20px'} width={'20px'} />) : ('Baixar relatório')}
-            </button>
+            <Row className="justify-content-end">
+                <Col xs="auto">
+                    <button className={`${styles.button} print-button`} type="button" onClick={handleGeneratePDF}>
+                        {downloadPdf ? (<ReactLoading type="spin" color='white' height={'20px'} width={'20px'} />) : ('Baixar relatório')}
+                    </button>
+                </Col>
+            </Row>
         </Container>
     );
 }

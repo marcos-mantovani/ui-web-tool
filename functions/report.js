@@ -1,11 +1,11 @@
-const scoreAnswers = {
+const pontuacaoRespostas = {
     atende: 1,
     atende_parcialmente: 0.5,
     nao_atende: 0,
     nao_aplica: null
 }
 
-const scoreQuestions = {
+const pontuacaoPerguntas = {
     A__espacamento: 3,
     A__escala_de_tamanhos: 3,
     A__tipografia: 3,
@@ -129,70 +129,70 @@ export function calculateScore(data) {
 
     Object.keys(data).map((val) => {
         if (data[val] != 'nao_aplica') {
-            score.maximo += scoreQuestions[val] * scoreAnswers.atende;
-            score.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+            score.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+            score.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
             if (val.startsWith("A__")) {
-                score.consistencia.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.consistencia.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.consistencia.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.consistencia.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.consistencia.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             } else if (val.startsWith("B__")) {
-                score.hierarquiaVisual.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.hierarquiaVisual.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.hierarquiaVisual.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.hierarquiaVisual.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.hierarquiaVisual.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             } else if (val.startsWith("C__")) {
-                score.usablidade.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.usablidade.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.usablidade.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.usablidade.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.usablidade.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             } else if (val.startsWith("D__")) {
-                score.designVisual.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.designVisual.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.designVisual.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.designVisual.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.designVisual.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             } else if (val.startsWith("E__")) {
-                score.imagens.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.imagens.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.imagens.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.imagens.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.imagens.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             } else if (val.startsWith("F__")) {
-                score.mobile.maximo += scoreQuestions[val] * scoreAnswers.atende;
-                score.mobile.real +=  scoreQuestions[val] * scoreAnswers[data[val]];
+                score.mobile.maximo += pontuacaoPerguntas[val] * pontuacaoRespostas.atende;
+                score.mobile.real +=  pontuacaoPerguntas[val] * pontuacaoRespostas[data[val]];
 
-                if(scoreAnswers[data[val]] != 1) {
+                if(pontuacaoRespostas[data[val]] != 1) {
                     score.mobile.questions.push({'name': questions[val], 'help': '', key: val});
                 }
             }
         }
     });
 
-    const scoreGeral = Math.round((score.real / score.maximo) * 100);
+    const pontuacaoGeral = Math.round((score.real / score.maximo) * 100);
     let descriptionOverallScore = '';
 
-    if (scoreGeral > 95) {
+    if (pontuacaoGeral > 95) {
         descriptionOverallScore = 'Sua interface demonstra um excelente design visual, alta usabilidade e acessibilidade, oferecendo uma experiência de usuário excepcional. Parabéns pelo excelente trabalho! Apenas mantenha a consistência e continue buscando inovações para manter a qualidade elevada.';
-    } else if (scoreGeral > 70) {
+    } else if (pontuacaoGeral > 70) {
         descriptionOverallScore = 'A maioria dos elementos e funcionalidades está bem implementada, proporcionando uma experiência de usuário agradável e eficiente. Apenas alguns ajustes menores são necessários para otimizar ainda mais a interface e garantir que todos os aspectos funcionem harmoniosamente.';
-    } else if (scoreGeral > 40) {
+    } else if (pontuacaoGeral > 40) {
         descriptionOverallScore = 'Alguns elementos estão bem estruturados, mas ainda há áreas que requerem melhorias para alcançar uma usabilidade satisfatória. Sugerimos focar em ajustes específicos para aprimorar a experiência do usuário e tornar a interface mais intuitiva e eficiente.';
     } else {
         descriptionOverallScore = 'Diversos aspectos essenciais, como design visual, usabilidade e acessibilidade, apresentam falhas significativas que dificultam a experiência do usuário. Recomendamos uma revisão completa dos elementos e funcionalidades para atender melhor às necessidades dos usuários e garantir uma navegação eficiente e agradável.';
     }
     
     return {
-        score: scoreGeral,
+        score: pontuacaoGeral,
         descriptionOverallScore: descriptionOverallScore,
         detailedScore: {
             consistencia: {
