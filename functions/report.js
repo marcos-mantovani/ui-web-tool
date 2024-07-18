@@ -197,32 +197,26 @@ export function calculateScore(data) {
         detailedScore: {
             consistencia: {
                 score: Math.round((score.consistencia.real / score.consistencia.maximo) * 100),
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
                 questions: score.consistencia.questions,
             },
             hierarquiaVisual: {
                 score: Math.round((score.hierarquiaVisual.real / score.hierarquiaVisual.maximo) * 100),
-                description: 'Lorem Ipsum is simply dummy',
                 questions: score.hierarquiaVisual.questions,
             },
             usablidade: {
                 score: Math.round((score.usablidade.real / score.usablidade.maximo) * 100),
-                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the',
                 questions: score.usablidade.questions,
             },
             designVisual: {
                 score: Math.round((score.designVisual.real / score.designVisual.maximo) * 100),
-                description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when",
                 questions: score.designVisual.questions,
             },
             imagens: {
                 score: Math.round((score.imagens.real / score.imagens.maximo) * 100),
-                description: 'Lorem Ipsum is simply dummy texten',
                 questions: score.imagens.questions,
             },
             mobile: {
                 score: Math.round((score.mobile.real / score.mobile.maximo) * 100),
-                description: 'Lorem Ipsum is simply dummy',
                 questions: score.mobile.questions,
             },
         }

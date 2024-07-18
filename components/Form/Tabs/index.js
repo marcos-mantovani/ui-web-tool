@@ -65,7 +65,11 @@ export default function FormTabs() {
                 >
                     {fieldsForm.map((data, idx) => {
                         return(
-                            <Tab key={idx} eventKey={data.tab} title={tabValidation[data.tab] ? data.titleTab : '⚠️  ' + data.titleTab}>
+                            <Tab 
+                                key={idx} 
+                                eventKey={data.tab} 
+                                title={tabValidation[data.tab] ? data.titleTab : '⚠️  ' + data.titleTab}
+                            >
                                 <Container 
                                     className={
                                         data.tab == 'consistencia' ? styles.formContainer1 : 

@@ -8,7 +8,7 @@ import styles from "./index.module.css";
 export default function Features() {
   return (
     <Container className={styles.features}>
-      <SectionTitle title="Avalie e Melhore a UI da sua Interface com Facilidade" />
+      <SectionTitle title="Avalie e Melhore sua Interface com Facilidade" />
       <Row className="justify-content-center">
         <Col xs={12} sm={6} lg={4}>
           <div className={styles.card}>
